@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
         Alive();
         if(currentHealth<=0){
             Destroy(gameObject);
-            SceneManager.LoadScene("CArga");
+            SceneManager.LoadScene("Menu");
             
         }
     }
