@@ -33,13 +33,14 @@ public class Shoot : MonoBehaviour
             }
         }
     
-        //if(Input.GetKeyDown(KeyCode.F)){
-          //  if(Time.time>shotRateTime){
-            //    GameObject newArrow;
-              //newArrow.GetComponent<Rigidbody>().AddForce(spawnPoint.forward*shotForce);
-               // shotRateTime=Time.time+shotRate;
-               // Destroy(newArrow,2);
-            //}
-        //}
+        if(Input.GetKeyDown(KeyCode.F)){
+            if(Time.time>shotRateTime){
+                GameObject newArrow;
+                newArrow=Instantiate(arrow, spawnPoint.position,Quaternion.Euler(spawnPoint.rotation.x,spawnPoint.rotation.y+90f,spawnPoint.rotation.z));
+                newArrow.GetComponent<Rigidbody>().AddForce(spawnPoint.forward*shotForce);
+                shotRateTime=Time.time+shotRate;
+                Destroy(newArrow,2);
+            }
+        }
     }
 }
